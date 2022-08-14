@@ -10,7 +10,7 @@
 @persist [GridMat,BaseModel]:string 
 @trigger none
 
-#Started At: 6:04PM   -   7:08PM |
+#Started At: 6:04PM   -   7:33PM |
 #Time: EST  |  8/13   -   14/22  |
 #Pain, pls make phx model lol
 
@@ -54,9 +54,9 @@ BearingRearRight = 0
 #
 #Flexicoil Extras
 BogieAng = 90
-BogiePos1 = -10   #Right
-BogiePos2 = 10    #Left
-MiddlePartPos = 0 #50
+BogiePos1 = -10.65   #Right
+BogiePos2 = 10.65    #Left
+MiddlePartPos = 0    #50
 
 #--------------------------------------------------------------------------------#
 #Middle Part Stuff (The big shits)
@@ -66,7 +66,7 @@ WheelAxleTexture = "models/proppertextures/wheel"
 WheelAxleScale = 0.66
 BaseTexture = "models/proppertextures/enamel_black"
 BrakeLineScale = 0.075
-BogieConnecterBox1Scale = vec(2.11,1.72,1.252)
+BogieConnecterBox1Scale = vec(2.11,1.85,1.252)
 BogieConnecterBox2Scale = vec(2.1175,1.9,1.983)
 BoxModel = "models/sprops/cuboids/height06/size_1/cube_6x6x6.mdl"
 PartOfTheBoxModel = "models/sprops/rectangles_thin/size_0/rect_1_5x6x1_5.mdl"
@@ -607,3 +607,4 @@ DamperTexture = "models/proppertextures/rubber"
     P2M11:parentTo(Base) 
     
 }
+
