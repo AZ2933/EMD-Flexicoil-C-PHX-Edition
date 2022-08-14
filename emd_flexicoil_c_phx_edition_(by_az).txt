@@ -10,7 +10,7 @@
 @persist [GridMat,BaseModel]:string 
 @trigger none
 
-#Started At: 6:04PM   -   7:33PM |
+#Started At: 6:04PM   -   7:36PM |
 #Time: EST  |  8/13   -   14/22  |
 #Pain, pls make phx model lol
 
@@ -40,7 +40,7 @@ E:setAlpha(0)
 
 FlexicoilModel = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl"
 Bolster_StyleBG = 0  #Limit = 1
-BrakesBG = 0         #Limit = 4
+BrakesBG = 2         #Limit = 4 (Recommended: 2, so your "outside shoes" wont hit the stairs immediately)
 BrakeRailThings = 0  #Limit = 1
 
 #Bearing Limit = 9
@@ -607,4 +607,3 @@ DamperTexture = "models/proppertextures/rubber"
     P2M11:parentTo(Base) 
     
 }
-
