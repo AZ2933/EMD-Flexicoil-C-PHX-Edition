@@ -10,8 +10,8 @@
 @persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number
 @trigger none
 
-#Started At: 6:04PM   -   8:58PM |
-#Time: EST  |  8/13   -   14/22  |
+#Started At: 6:04PM   -   8:58PM | 3:00 - 3:02 |
+#Time: EST  |  8/13   -   14     -    15  /22  |
 #Pain, pls make phx model lol
 
 if(first()|dupefinished()){
@@ -84,7 +84,7 @@ POTBTallness = 0.92
 
 #Middle Part Extras
 WheelAxleLength = 1.1
-BrakeLineLength = 8.85
+BrakeLineLength = 8.954
 Clipping2Box1 = 11.924
 Clipping2Box2 = 11.924
 Clipping2Box3 = -11.924
@@ -513,4 +513,3 @@ DamperTexture = "models/proppertextures/rubber"
 #------------------------------------------------------------------------------------------------------------------------------#       
 
 }
-
