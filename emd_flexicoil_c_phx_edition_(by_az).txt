@@ -7,10 +7,10 @@
 @persist [BogieConnecterBox1Scale,BogieConnecterBox2Scale]:vector [Clipping2Box1,Clipping2Box2,Clipping2Box3,Clipping2Box4]:number
 @persist [BoxModel,PartOfTheBoxModel,BrakeLineModel,BoxCornerModel]:string [BoxCornerScale]:vector [MiddlePartPos]:number
 @persist [MotorTexture,MotorModel,InvisibleMat,DamperModel,DamperTexture]:string [MotorBG,MotorSubRemover,MotorSMSWL]:number 
-@persist [GridMat,BaseModel]:string 
+@persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number
 @trigger none
 
-#Started At: 6:04PM   -   7:36PM |
+#Started At: 6:04PM   -   8:58PM |
 #Time: EST  |  8/13   -   14/22  |
 #Pain, pls make phx model lol
 
@@ -33,8 +33,8 @@ E:setAlpha(0)
 #Idk
 
 
-#   Mesh   Count: 42
-#Mesh Controller: 11
+#   Mesh   Count: 43 (How many meshes you created:)
+#Mesh Controller: 5  (How many are they:)
 
 #--------------------------------------------------------------------------------#
 
@@ -208,44 +208,27 @@ DamperTexture = "models/proppertextures/rubber"
     "ang" = ang(45,0,90), "scale" = vec(BrakeLineScale,BrakeLineScale,BrakeLineLength)
     ))
     
-#--------------------------------------------------#
-
-    #End of the Axle Mesh
-    P2M2:p2mBuild()
-    P2M2:p2mSetMaterial(P2MID2,BaseTexture)
-
-    P2M2:parentTo(Base)                
- 
-#------------------------------------------------------------------------------------------------------------------------------#       
-    #Bogie Connectors
-    #Rear Left
-    P2MID3 = 6
-    P2M3 = p2mCreate(P2MID3,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-
-#------------------------------#
-    
     #
+    #Bogie Connectors 1
     #Very Top Part
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxModel,"pos" = vec(39.93,-30.51,-3.445),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(39.93,-30.51,-3.445),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox1Scale
     ))
 
     #Bottom Top
     #Top (Back Part) Top Bottom -45* Connector Thing
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxCornerModel,"pos" = vec(45.045,-30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(45.045,-30.5,-9.938),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
     #Top (Front Part) Top Bottom 45* Connector Thing
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxCornerModel,"pos" = vec(33.205,-30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(33.205,-30.5,-9.938),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #Very Bottom
     #Top  (Back Part) Very Bottom -45* Connector Thing
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxCornerModel,"pos" = vec(45.045,-30.5,-21.017),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(45.045,-30.5,-21.017),
     "ang" = ang(0,90,-45), "scale" = vec(0.808,0.2,0.22),
             
         "bodygroup" = 0, "submodels" = array(0), "submodelswl" = 1, "flat" = 0, "inside" = 0,
@@ -254,13 +237,13 @@ DamperTexture = "models/proppertextures/rubber"
 
 
     #Top (Front Part) Very Bottom 45* Connector Thing
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxCornerModel,"pos" = vec(33.205,-30.5,-21),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(33.205,-30.5,-21),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #
     #Very Top Part
-    P2M3:p2mPushModel(P2MID3,table("model" = BoxModel,"pos" = vec(39.1,-30.51,-15.46),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(39.1,-30.51,-15.46),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox2Scale,
         "clips" = array(
         #Top Back 
@@ -270,57 +253,41 @@ DamperTexture = "models/proppertextures/rubber"
         vec(0,0,Clipping2Box4),vec(1,0,1)            
         )
     ))
-
-#--------------------------------------------------#
-
-    #End of the 1st part of the Bogie Connectors
-    P2M3:p2mBuild()
-    P2M3:p2mSetMaterial(P2MID3,BaseTexture)
-    P2M3:parentTo(Base)                
-#
-
-#------------------------------------------------------------------------------------------------------------------------------#       
-    #Bogie Connectors
-    #Rear Right
-    P2MID4 = 6
-    P2M4 = p2mCreate(P2MID4,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-
-#------------------------------#
+    
     
     #
+    #Bogie Connectors 2
     #Very Top Part
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxModel,"pos" = vec(39.93,30.51,-3.445),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(39.93,30.51,-3.445),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox1Scale
     ))
 
     #Bottom Top
     #Top (Back Part) Top Bottom -45* Connector Thing
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxCornerModel,"pos" = vec(45.045,30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(45.045,30.5,-9.938),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
     #Top (Front Part) Top Bottom 45* Connector Thing
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxCornerModel,"pos" = vec(33.205,30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(33.205,30.5,-9.938),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #Very Bottom
     #Top  (Back Part) Very Bottom -45* Connector Thing
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxCornerModel,"pos" = vec(45.045,30.5,-21.017),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(45.045,30.5,-21.017),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
 
     #Top (Front Part) Very Bottom 45* Connector Thing
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxCornerModel,"pos" = vec(33.205,30.5,-21),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(33.205,30.5,-21),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #
     #Very Top Part
-    P2M4:p2mPushModel(P2MID4,table("model" = BoxModel,"pos" = vec(39.1,30.51,-15.46),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(39.1,30.51,-15.46),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox2Scale,
         "clips" = array(
         #Top Back 
@@ -330,59 +297,40 @@ DamperTexture = "models/proppertextures/rubber"
         vec(0,0,Clipping2Box4),vec(1,0,1)          
         )
     ))
-
-
-#--------------------------------------------------#
-
-    #End of the 2ns part of the Bogie Connectors
-    P2M4:p2mBuild()
-    P2M4:p2mSetMaterial(P2MID4,BaseTexture)
-    P2M4:p2mSetColor(P2MID4,vec(255,255,255))
-    P2M4:parentTo(Base)                
-#
- 
-#------------------------------------------------------------------------------------------------------------------------------#       
-    #Bogie Connectors
-    #Rear Left
-    P2MID5 = 6
-    P2M5 = p2mCreate(P2MID5,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-
-#------------------------------#
     
     #
+    #Bogie Connecters 3
     #Very Top Part
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxModel,"pos" = vec(-39.93,-30.51,-3.445),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(-39.93,-30.51,-3.445),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox1Scale
     ))
 
     #Bottom Top
     #Top (Back Part) Top Bottom -45* Connector Thing
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxCornerModel,"pos" = vec(-45.045,-30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-45.045,-30.5,-9.938),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
     #Top (Front Part) Top Bottom 45* Connector Thing
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxCornerModel,"pos" = vec(-33.205,-30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-33.205,-30.5,-9.938),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #Very Bottom
     #Top  (Back Part) Very Bottom -45* Connector Thing
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxCornerModel,"pos" = vec(-45.045,-30.5,-21.017),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-45.045,-30.5,-21.017),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
 
     #Top (Front Part) Very Bottom 45* Connector Thing
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxCornerModel,"pos" = vec(-33.205,-30.5,-21),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-33.205,-30.5,-21),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #
     #Very Top Part
-    P2M5:p2mPushModel(P2MID5,table("model" = BoxModel,"pos" = vec(-39.1,-30.51,-15.46),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(-39.1,-30.51,-15.46),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox2Scale,
         "clips" = array(
         #Top Back 
@@ -392,58 +340,40 @@ DamperTexture = "models/proppertextures/rubber"
         vec(0,0,Clipping2Box4),vec(1,0,1)        
         )
     ))
-
-#--------------------------------------------------#
-
-    #End of the 3rd part of the Bogie Connectors
-    P2M5:p2mBuild()
-    P2M5:p2mSetMaterial(P2MID5,BaseTexture)
-    P2M3:p2mSetColor(P2MID1,vec(255,255,255))
-    P2M5:parentTo(Base)                
-#
-
-#------------------------------------------------------------------------------------------------------------------------------#       
-    #Bogie Connectors
-    #Rear Right
-    P2MID6 = 6
-    P2M6 = p2mCreate(P2MID6,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-
-#------------------------------#
     
     #
+    #Bogie Connector 4
     #Very Top Part
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxModel,"pos" = vec(-39.93,30.51,-3.445),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(-39.93,30.51,-3.445),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox1Scale
     ))
 
     #Bottom Top
     #Top (Back Part) Top Bottom -45* Connector Thing
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxCornerModel,"pos" = vec(-45.045,30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-45.045,30.5,-9.938),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
     #Top (Front Part) Top Bottom 45* Connector Thing
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxCornerModel,"pos" = vec(-33.205,30.5,-9.938),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-33.205,30.5,-9.938),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #Very Bottom
     #Top  (Back Part) Very Bottom -45* Connector Thing
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxCornerModel,"pos" = vec(-45.045,30.5,-21.017),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-45.045,30.5,-21.017),
     "ang" = ang(0,90,-45), "scale" = BoxCornerScale
     ))
 
 
     #Top (Front Part) Very Bottom 45* Connector Thing
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxCornerModel,"pos" = vec(-33.205,30.5,-21),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxCornerModel,"pos" = vec(-33.205,30.5,-21),
     "ang" = ang(0,90,45), "scale" = BoxCornerScale
     ))
 
     #
     #Very Top Part
-    P2M6:p2mPushModel(P2MID6,table("model" = BoxModel,"pos" = vec(-39.1,30.51,-15.46),
+    P2M2:p2mPushModel(P2MID2,table("model" = BoxModel,"pos" = vec(-39.1,30.51,-15.46),
     "ang" = ang(0,0,0), "scale" = BogieConnecterBox2Scale,
         "clips" = array(
         #Top Back 
@@ -453,61 +383,98 @@ DamperTexture = "models/proppertextures/rubber"
         vec(0,0,Clipping2Box4),vec(1,0,1)        
         )
     ))
+    
+    #
+    #Base
+    P2M2:p2mPushModel(P2MID2,table("model" = BaseModel,"pos" = vec(0,0,0),
+    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
+    "submodels" = array(0,1), "submodelswl" = 1, 
+    "clips" = array(
+    vec(-29,0,0),vec(1,0,0),vec(29,0,0),vec(-1,0,0)
+    )
+    ))
+    
+    #
+    #Top Box Clip Cover Thingys
+    #Rear Left Top Box Clip Cover
+    P2M2:p2mPushModel(P2MID2,table("model" = PartOfTheBoxModel,"pos" = vec(45.56,-34.72,-2.455),
+    "ang" = ang(90,8,0), "scale" = vec(POTBTallness,1,1)
+    ))
 
+    #Front Left Top Box Clip Cover
+    P2M2:p2mPushModel(P2MID2,table("model" = PartOfTheBoxModel,"pos" = vec(-45.56,-34.72,-2.455),
+    "ang" = ang(90,-8,0), "scale" = vec(POTBTallness,1,1)
+    ))
 
+    #Rear Right Top Box Clip Cover
+    P2M2:p2mPushModel(P2MID2,table("model" = PartOfTheBoxModel,"pos" = vec(45.56,34.72,-2.455),
+    "ang" = ang(90,-8,0), "scale" = vec(POTBTallness,1,1)
+    ))
+
+    #Front Right Top Box Clip Cover
+    P2M2:p2mPushModel(P2MID2,table("model" = PartOfTheBoxModel,"pos" = vec(-45.56,34.72,-2.455),
+    "ang" = ang(90,8,0), "scale" = vec(POTBTallness,1,1)
+    )) 
+    
+    #Under da grid / Grid holder
+    P2M2:p2mPushModel(P2MID2,table("model" = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl","pos" = vec(0,0,0),
+    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
+    "submodels" = array(0,1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)
+    ))
+    
 #--------------------------------------------------#
 
-    #End of the 4th part of the Bogie Connectors
-    P2M6:p2mBuild()
-    P2M6:p2mSetMaterial(P2MID6,BaseTexture)
-    P2M6:p2mSetColor(P2MID6,vec(255,255,255))
-    P2M6:parentTo(Base)                
+    #End of the BrakeLine, Bogie Connectors 1,2,3,& 4, And other shit.
+    P2M2:p2mBuild()
+    P2M2:p2mSetMaterial(P2MID2,BaseTexture)
 
+    P2M2:parentTo(Base)                
+     
 #------------------------------------------------------------------------------------------------------------------------------#       
 
     #Middle part mesh stuff
-    P2MID7 = 1
-    P2M7 = p2mCreate(P2MID7,
+    P2MID3 = 1
+    P2M3 = p2mCreate(P2MID3,
     E1:toWorld(vec(0)),
     E1:toWorld(ang(0)))
 
 #------------------------------#
     
     #Front Motors
-    P2M7:p2mPushModel(P2MID7,table("model" = MotorModel,"pos" = vec(-81.48,0,-24.6),
+    P2M3:p2mPushModel(P2MID3,table("model" = MotorModel,"pos" = vec(-81.48,0,-24.6),
     "ang" = ang(180,0,180), "scale" = vec(1) , "bodygroup" = MotorBG, "submodels" = array(MotorSubRemover), 
-    "submodelswl" = MotorSMSWL, "clips" = array(vec(0,0,0),vec(0,0,0))
+    "submodelswl" = MotorSMSWL
     ))
     #Middle Motors
-    P2M7:p2mPushModel(P2MID7,table("model" = MotorModel,"pos" = vec(0,0,-24.6),
+    P2M3:p2mPushModel(P2MID3,table("model" = MotorModel,"pos" = vec(0,0,-24.6),
     "ang" = ang(180,0,180), "scale" = vec(1) , "bodygroup" = MotorBG, "submodels" = array(MotorSubRemover), 
-    "submodelswl" = MotorSMSWL, "clips" = array(vec(0,0,0),vec(0,0,0))
+    "submodelswl" = MotorSMSWL
     ))
     #Back Motors
-    P2M7:p2mPushModel(P2MID7,table("model" = MotorModel,"pos" = vec(81.48,0,-24.6),
+    P2M3:p2mPushModel(P2MID3,table("model" = MotorModel,"pos" = vec(81.48,0,-24.6),
     "ang" = ang(0,0,0), "scale" = vec(1) , "bodygroup" = MotorBG, "submodels" = array(MotorSubRemover), 
-    "submodelswl" = MotorSMSWL, "clips" = array(vec(0,0,0),vec(0,0,0))
+    "submodelswl" = MotorSMSWL
     ))
 
 #--------------------------------------------------#
 
     #End of Motor mesh
-    P2M7:p2mBuild()
-    P2M7:p2mSetMaterial(P2MID7,MotorTexture)
-    P2M7:p2mSetColor(P2MID7,vec(127))
-    P2M7:parentTo(Base)             
+    P2M3:p2mBuild()
+    P2M3:p2mSetMaterial(P2MID3,MotorTexture)
+    P2M3:p2mSetColor(P2MID3,vec(127))
+    P2M3:parentTo(Base)             
 
 #------------------------------------------------------------------------------------------------------------------------------#       
    
     #Dampers
-    P2MID8 = 1
-    P2M8 = p2mCreate(P2MID8,
+    P2MID4 = 1
+    P2M4 = p2mCreate(P2MID4,
     E1:toWorld(vec(0)),
     E1:toWorld(ang(0)))
     
 #------------------------------#
       
-    P2M8:p2mPushModel(P2MID8,table("model" = DamperModel,"pos" = vec(0,0,0),
+    P2M4:p2mPushModel(P2MID4,table("model" = DamperModel,"pos" = vec(0,0,0),
     "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, "submodels" = 
     array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25), "submodelswl" = 0, 
     "clips" = array(vec(0,0,0),vec(0,0,0))
@@ -516,94 +483,34 @@ DamperTexture = "models/proppertextures/rubber"
 #--------------------------------------------------#
 
     #End of dampers mesh
-    P2M8:p2mBuild()
-    P2M8:p2mSetMaterial(P2MID8,DamperTexture)
-    P2M8:p2mSetColor(P2MID8,vec(255))
-    P2M8:parentTo(Base)  
+    P2M4:p2mBuild()
+    P2M4:p2mSetMaterial(P2MID4,DamperTexture)
+    P2M4:p2mSetColor(P2MID4,vec(255))
+    P2M4:parentTo(Base)  
 
 #------------------------------------------------------------------------------------------------------------------------------#       
    
     #Grid
-    P2MID9 = 1
-    P2M9 = p2mCreate(P2MID9,
+    P2MID5 = 1
+    P2M5 = p2mCreate(P2MID5,
     E1:toWorld(vec(0)),
     E1:toWorld(ang(0)))
     
 #------------------------------#
       
-    P2M9:p2mPushModel(P2MID9,table("model" = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl","pos" = vec(0,0,0),
+    P2M5:p2mPushModel(P2MID5,table("model" = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl","pos" = vec(0,0,0),
     "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
-    "submodels" = array(0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26), "submodelswl" = 0, 
-    "clips" = array(vec(0,0,0),vec(0,0,0))
+    "submodels" = array(0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)
     ))
 
 #--------------------------------------------------#
 
     #End of Dampers mesh
-    P2M9:p2mBuild()
-    P2M9:p2mSetMaterial(P2MID9,GridMat)
-    P2M9:parentTo(Base) 
+    P2M5:p2mBuild()
+    P2M5:p2mSetMaterial(P2MID5,GridMat)
+    P2M5:parentTo(Base) 
     
 #------------------------------------------------------------------------------------------------------------------------------#       
 
-    #Base
-    P2MID10 = 1
-    P2M10 = p2mCreate(P2MID10,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-    
-#------------------------------#
-      
-    P2M10:p2mPushModel(P2MID10,table("model" = BaseModel,"pos" = vec(0,0,0),
-    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
-    "submodels" = array(0,1), "submodelswl" = 1, 
-    "clips" = array(
-    vec(-29,0,0),vec(1,0,0),vec(29,0,0),vec(-1,0,0)
-    )
-    ))
-
-#--------------------------------------------------#
-
-    #End of Base mesh
-    P2M10:p2mBuild()
-    P2M10:p2mSetMaterial(P2MID10,BaseTexture)
-    P2M10:parentTo(Base) 
-    
-#------------------------------------------------------------------------------------------------------------------------------#       
-
-    #Top Box Clip Cover Thingys
-    P2MID11 = 1
-    P2M11 = p2mCreate(P2MID11,
-    E1:toWorld(vec(0)),
-    E1:toWorld(ang(0)))
-    
-#------------------------------#
-
-    #Rear Left Top Box Clip Cover
-    P2M11:p2mPushModel(P2MID11,table("model" = PartOfTheBoxModel,"pos" = vec(45.56,-34.72,-2.455),
-    "ang" = ang(90,8,0), "scale" = vec(POTBTallness,1,1)
-    ))
-
-    #Front Left Top Box Clip Cover
-    P2M11:p2mPushModel(P2MID11,table("model" = PartOfTheBoxModel,"pos" = vec(-45.56,-34.72,-2.455),
-    "ang" = ang(90,-8,0), "scale" = vec(POTBTallness,1,1)
-    ))
-
-    #Rear Right Top Box Clip Cover
-    P2M11:p2mPushModel(P2MID11,table("model" = PartOfTheBoxModel,"pos" = vec(45.56,34.72,-2.455),
-    "ang" = ang(90,-8,0), "scale" = vec(POTBTallness,1,1)
-    ))
-
-    #Front Right Top Box Clip Cover
-    P2M11:p2mPushModel(P2MID11,table("model" = PartOfTheBoxModel,"pos" = vec(-45.56,34.72,-2.455),
-    "ang" = ang(90,8,0), "scale" = vec(POTBTallness,1,1)
-    ))
-
-#--------------------------------------------------#
-
-    #End of Base mesh
-    P2M11:p2mBuild()
-    P2M11:p2mSetMaterial(P2MID11,BaseTexture)
-    P2M11:parentTo(Base) 
-    
 }
+
