@@ -7,11 +7,12 @@
 @persist [BogieConnecterBox1Scale,BogieConnecterBox2Scale]:vector [Clipping2Box1,Clipping2Box2,Clipping2Box3,Clipping2Box4]:number
 @persist [BoxModel,PartOfTheBoxModel,BrakeLineModel,BoxCornerModel]:string [BoxCornerScale]:vector [MiddlePartPos]:number
 @persist [MotorTexture,MotorModel,InvisibleMat,DamperModel,DamperTexture]:string [MotorBG,MotorSubRemover,MotorSMSWL]:number 
-@persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number
+@persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number [BaseTexture2]:string
+@persist [BaseTexture3,BaseTexture4]:string
 @trigger none
 
-#Started At: 6:04PM   -   8:58PM | 3:00 - 3:07 |
-#Time: EST  |  8/13   -   14     -    15  /22  |
+#Started At: 6:04PM   -   8:58PM | 3:00 - 3:07 | 1:52 - 1:58 |
+#Time: EST  |  8/13   -   14     -    15      -     17  /22  |
 #Pain, pls make phx model lol
 
 if(first()|dupefinished()){
@@ -57,6 +58,9 @@ BogieAng = 90
 BogiePos1 = -10.65   #Right
 BogiePos2 = 10.65    #Left
 MiddlePartPos = 0    #50
+BaseTexture2 = ""
+BaseTexture3 = ""
+BaseTexture4 = ""
 
 #--------------------------------------------------------------------------------#
 #Middle Part Stuff (The big shits)
@@ -110,6 +114,10 @@ DamperTexture = "models/proppertextures/rubber"
     holoBodygroup(A,7,BearingFrontRight)
     holoBodygroup(A,8,BearingMiddleRight)
     holoBodygroup(A,9,BearingRearRight)
+    holoEntity(A):setSubMaterial(1,BaseTexture)
+    holoEntity(A):setSubMaterial(4,BaseTexture2)
+    holoEntity(A):setSubMaterial(8,BaseTexture3)
+    holoEntity(A):setSubMaterial(9,BaseTexture4)
 
 #Right Side
     A = 1 
@@ -128,6 +136,10 @@ DamperTexture = "models/proppertextures/rubber"
     holoBodygroup(A,4,BearingFrontLeft)
     holoBodygroup(A,5,BearingMiddleLeft)
     holoBodygroup(A,6,BearingRearLeft)
+    holoEntity(A):setSubMaterial(1,BaseTexture)
+    holoEntity(A):setSubMaterial(4,BaseTexture2)
+    holoEntity(A):setSubMaterial(8,BaseTexture3)
+    holoEntity(A):setSubMaterial(9,BaseTexture4)
 
 #Middle Side
     A = 2 
@@ -513,3 +525,4 @@ DamperTexture = "models/proppertextures/rubber"
 #------------------------------------------------------------------------------------------------------------------------------#       
 
 }
+
