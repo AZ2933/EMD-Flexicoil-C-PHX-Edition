@@ -8,11 +8,11 @@
 @persist [BoxModel,PartOfTheBoxModel,BrakeLineModel,BoxCornerModel]:string [BoxCornerScale]:vector [MiddlePartPos]:number
 @persist [MotorTexture,MotorModel,InvisibleMat,DamperModel,DamperTexture]:string [MotorBG,MotorSubRemover,MotorSMSWL]:number 
 @persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number [BaseTexture2]:string
-@persist [BaseTexture3,BaseTexture4]:string
+@persist [BaseTexture3,BaseTexture4]:string [BaseColor,BaseColor2]:vector
 @trigger none
 
-#Started At: 6:04PM   -   8:58PM | 3:00 - 3:07 | 1:52 - 1:58 |
-#Time: EST  |  8/13   -   14     -    15      -     17  /22  |
+#Started At: 6:04PM - 8:58PM | 3:00PM - 3:07PM | 1:52PM - 1:58PM | 9:58PM - 10:10PM |
+#Time: EST  |  8/13  -  14      -     15       -       17    /22 |      9/7/22      |  
 #Pain, pls make phx model lol
 
 if(first()|dupefinished()){
@@ -45,7 +45,7 @@ BrakesBG = 2         #Limit = 4 (Recommended: 2, so your "outside shoes" wont hi
 BrakeRailThings = 0  #Limit = 1
 
 #Bearing Limit = 9
-BearingFrontLeft = 1 #So you know which way is front 
+BearingFrontLeft = 0 
 BearingMiddleLeft = 0 
 BearingRearLeft = 0 
 BearingFrontRight = 0 
@@ -59,6 +59,7 @@ BogiePos1 = -10.65   #Right
 BogiePos2 = 10.65    #Left
 MiddlePartPos = 0    #50
 BaseTexture2 = ""
+BaseColor2 = vec(0,127,31)
 BaseTexture3 = ""
 BaseTexture4 = ""
 
@@ -68,7 +69,8 @@ BaseTexture4 = ""
 WheelAxleReplacementModel = "models/holograms/hq_tube_thin.mdl"
 WheelAxleTexture = "models/proppertextures/wheel"
 WheelAxleScale = 0.66
-BaseTexture = "models/proppertextures/enamel_black"
+BaseTexture = "models/proppertextures/enamel_black" #arcylic"
+BaseColor = vec(0,127,31) #Already numbered the colors to make sure the materials are good, should be.
 BrakeLineScale = 0.075
 BogieConnecterBox1Scale = vec(2.11,1.85,1.252)
 BogieConnecterBox2Scale = vec(2.1175,1.9,1.983)
@@ -105,7 +107,7 @@ DamperTexture = "models/proppertextures/rubber"
     holoModel(A,FlexicoilModel)
     holoPos(A,E:toWorld(vec(BogiePos1,0,0.4)))
     holoAng(A,E:toWorld(ang(0,BogieAng,0)))
-    holoColor(A,vec(255))
+    holoColor(A,BaseColor2)
     holoClipEnabled(A,1)
     holoClip(A,1,vec(0,25.35,0),vec(0,1,0),0)
     holoBodygroup(A,1,Bolster_StyleBG)
@@ -126,7 +128,7 @@ DamperTexture = "models/proppertextures/rubber"
     holoModel(A,FlexicoilModel)
     holoPos(A,E:toWorld(vec(BogiePos2,0,0.4)))
     holoAng(A,E:toWorld(ang(0,BogieAng,0)))
-    holoColor(A,vec(255))
+    holoColor(A,BaseColor2)
     holoClipEnabled(A,1)
     holoClip(A,1,vec(0,-25.35,0),vec(0,-1,0),0)
     holoBodygroup(A,1,Bolster_StyleBG)
@@ -439,7 +441,7 @@ DamperTexture = "models/proppertextures/rubber"
     #End of the BrakeLine, Bogie Connectors 1,2,3,& 4, And other shit.
     P2M2:p2mBuild()
     P2M2:p2mSetMaterial(P2MID2,BaseTexture)
-
+    P2M2:p2mSetColor(P2MID2,BaseColor)
     P2M2:parentTo(Base)                
      
 #------------------------------------------------------------------------------------------------------------------------------#       
@@ -525,4 +527,3 @@ DamperTexture = "models/proppertextures/rubber"
 #------------------------------------------------------------------------------------------------------------------------------#       
 
 }
-
