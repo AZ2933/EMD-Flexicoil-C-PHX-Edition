@@ -1,6 +1,6 @@
 @name EMD Flexicoil C PHX Edition (By AZ)
 @inputs [LocoBogey3,Commonwealth_a1a_long_phx]:entity
-#@outputs 
+#@outputs Unnecessary... for now?
 @persist [E,E1,Base]:entity [FlexicoilModel]:string [Bolster_StyleBG,BrakesBG,BrakeRailThings,BearingFrontLeft,BearingMiddleLeft]:number
 @persist [BearingRearLeft,BearingFrontRight,BearingMiddleRight,BearingRearRight,BogieAng,BogiePos]:number [WheelAxleTexture]:string
 @persist [WheelAxleReplacementModel,BaseTexture]:string [WheelAxleScale,WheelAxleLength,BrakeLineLength,BrakeLineScale]:number
@@ -11,8 +11,8 @@
 @persist [BaseTexture3,BaseTexture4]:string [BaseColor,BaseColor2]:vector
 @trigger none
 
-#Started At: 6:04PM - 8:58PM | 3:00PM - 3:07PM | 1:52PM - 1:58PM | 9:58PM - 10:10PM |
-#Time: EST  |  8/13  -  14      -     15       -       17    /22 |      9/7/22      |  
+#Started At: 6:04PM - 8:58PM | 3:00PM - 3:07PM | 1:52PM - 1:58PM | 9:58PM - 10:10PM | 6:16PM - 6:24PM |
+#Time: EST  |  8/13  -  14      -     15       -       17    /22 | 9/     7         -        8   /22  |  
 #Pain, pls make phx model lol
 
 if(first()|dupefinished()){
@@ -28,22 +28,25 @@ E:setSkin(1)
 E = Commonwealth_a1a_long_phx
 }
 
-#
+#--------------------------------------------------#
+
 Base = E
 E:setAlpha(0)
 #Idk
+#--------------------------------------------------#
 
-
+#Mesh Shit
 #   Mesh   Count: 43 (How many meshes you created:)
 #Mesh Controller: 5  (How many are they:)
 
 #--------------------------------------------------------------------------------#
 
 FlexicoilModel = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl"
-Bolster_StyleBG = 0  #Limit = 1
+Bolster_StyleBG = 1  #Limit = 1
 BrakesBG = 2         #Limit = 4 (Recommended: 2, so your "outside shoes" wont hit the stairs immediately)
 BrakeRailThings = 0  #Limit = 1
 
+#--------------------------------------------------------------------------------#
 #Bearing Limit = 9
 BearingFrontLeft = 0 
 BearingMiddleLeft = 0 
@@ -52,7 +55,7 @@ BearingFrontRight = 0
 BearingMiddleRight = 0 
 BearingRearRight = 0 
 
-#
+#--------------------------------------------------------------------------------#
 #Flexicoil Extras
 BogieAng = 90
 BogiePos1 = -10.65   #Right
@@ -88,6 +91,7 @@ GridMat = "models/proppertextures/grid_b"
 BaseModel = DamperModel
 POTBTallness = 0.92
 
+#--------------------------------------------------------------------------------#
 #Middle Part Extras
 WheelAxleLength = 1.1
 BrakeLineLength = 8.954
@@ -401,7 +405,7 @@ DamperTexture = "models/proppertextures/rubber"
     #
     #Base
     P2M2:p2mPushModel(P2MID2,table("model" = BaseModel,"pos" = vec(0,0,0),
-    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
+    "ang" = ang(0,BogieAng,0), "scale" = vec(1), 
     "submodels" = array(0,1), "submodelswl" = 1, 
     "clips" = array(
     vec(-29,0,0),vec(1,0,0),vec(29,0,0),vec(-1,0,0)
@@ -432,7 +436,7 @@ DamperTexture = "models/proppertextures/rubber"
     
     #Under da grid / Grid holder
     P2M2:p2mPushModel(P2MID2,table("model" = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl","pos" = vec(0,0,0),
-    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
+    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = Bolster_StyleBG, 
     "submodels" = array(0,1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)
     ))
     
@@ -513,7 +517,7 @@ DamperTexture = "models/proppertextures/rubber"
 #------------------------------#
       
     P2M5:p2mPushModel(P2MID5,table("model" = "models/zexciv_train_stuff/usa/emd/emd_flexicoil_c.mdl","pos" = vec(0,0,0),
-    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = 0, 
+    "ang" = ang(0,BogieAng,0), "scale" = vec(1) , "bodygroup" = Bolster_StyleBG, 
     "submodels" = array(0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)
     ))
 
