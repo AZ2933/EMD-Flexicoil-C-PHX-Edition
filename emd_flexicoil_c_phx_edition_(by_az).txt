@@ -8,11 +8,11 @@
 @persist [BoxModel,PartOfTheBoxModel,BrakeLineModel,BoxCornerModel]:string [BoxCornerScale]:vector [MiddlePartPos]:number
 @persist [MotorTexture,MotorModel,InvisibleMat,DamperModel,DamperTexture]:string [MotorBG,MotorSubRemover,MotorSMSWL]:number 
 @persist [GridMat,BaseModel]:string [P2M1,P2M2,P2M3,P2M4,P2M5]:entity [P2MID1,P2MID2,P2MID3,P2MID4,P2MID5]:number [BaseTexture2]:string
-@persist [BaseTexture3,BaseTexture4]:string [BaseColor,BaseColor2]:vector
+@persist [BaseTexture3,BaseTexture4]:string [BaseColor,BaseColor2]:vector PhysicalMat:string Rollable:number
 @trigger none
 
-#Started At: 6:04PM - 8:58PM | 3:00PM - 3:07PM | 1:52PM - 1:58PM | 9:58PM - 10:10PM | 6:16PM - 6:24PM |
-#Time: EST  |  8/13  -  14      -     15       -       17    /22 | 9/     7         -        8   /22  |  
+#Started At: 6:04PM - 8:58PM | 3:00PM - 3:07PM | 1:52PM - 1:58PM | 9:58PM - 10:10PM | 6:16PM - 6:24PM | 5:12PM - 5:22PM |
+#Time: EST  |  8/13  -  14      -     15       -       17    /22 | 9/     7         -        8       -        21    /22 |  
 #Pain, pls make phx model lol
 
 if(first()|dupefinished()){
@@ -38,6 +38,12 @@ E:setAlpha(0)
 #Mesh Shit
 #   Mesh   Count: 43 (How many meshes you created:)
 #Mesh Controller: 5  (How many are they:)
+
+#--------------------------------------------------#
+
+PhysicalMat = "gmod_ice"
+LocoBogey3:propPhysicalMaterial(PhysicalMat)
+Commonwealth_a1a_long_phx:propPhysicalMaterial(PhysicalMat) 
 
 #--------------------------------------------------------------------------------#
 
@@ -72,7 +78,7 @@ BaseTexture4 = ""
 WheelAxleReplacementModel = "models/holograms/hq_tube_thin.mdl"
 WheelAxleTexture = "models/proppertextures/wheel"
 WheelAxleScale = 0.66
-BaseTexture = "models/proppertextures/enamel_black" #arcylic"
+BaseTexture = "models/proppertextures/enamel_black" #acrylic"
 BaseColor = vec(0,127,31) #Already numbered the colors to make sure the materials are good, should be.
 BrakeLineScale = 0.075
 BogieConnecterBox1Scale = vec(2.11,1.85,1.252)
@@ -102,6 +108,7 @@ Clipping2Box4 = -11.924
 MotorBG = 1
 InvisibleMat = "magtrains/invisible"
 DamperTexture = "models/proppertextures/rubber"
+#Rollable = 0
 
 #--------------------------------------------------------------------------------#
 #Right Side
@@ -121,11 +128,12 @@ DamperTexture = "models/proppertextures/rubber"
     holoBodygroup(A,8,BearingMiddleRight)
     holoBodygroup(A,9,BearingRearRight)
     holoEntity(A):setSubMaterial(1,BaseTexture)
+#    holoEntity(A):setSubMaterial(2,"magtrains/invisible")
     holoEntity(A):setSubMaterial(4,BaseTexture2)
     holoEntity(A):setSubMaterial(8,BaseTexture3)
     holoEntity(A):setSubMaterial(9,BaseTexture4)
 
-#Right Side
+#Left Side
     A = 1 
     holoCreate(A)
     holoParent(A,E)
@@ -143,6 +151,7 @@ DamperTexture = "models/proppertextures/rubber"
     holoBodygroup(A,5,BearingMiddleLeft)
     holoBodygroup(A,6,BearingRearLeft)
     holoEntity(A):setSubMaterial(1,BaseTexture)
+#    holoEntity(A):setSubMaterial(2,"magtrains/invisible")
     holoEntity(A):setSubMaterial(4,BaseTexture2)
     holoEntity(A):setSubMaterial(8,BaseTexture3)
     holoEntity(A):setSubMaterial(9,BaseTexture4)
@@ -168,8 +177,8 @@ DamperTexture = "models/proppertextures/rubber"
     
 #------------------------------#
  
-   #Front Left
-    P2M1:p2mPushModel(P2MID1,table("model" = WheelAxleReplacementModel,"pos" = vec(-81.5,-30.8,-24.528),"ang" = ang(0,0,90), 
+    #Front Left
+    P2M1:p2mPushModel(P2MID1,table("model" = WheelAxleReplacementModel,"pos" = vec(-81.5,-31.2,-24.528),"ang" = ang(0,0,90), 
     "scale" = vec(WheelAxleScale,WheelAxleScale,WheelAxleLength-0.1)
     ))
     
@@ -180,7 +189,7 @@ DamperTexture = "models/proppertextures/rubber"
     
     
     #Middle Left
-    P2M1:p2mPushModel(P2MID1,table("model" = WheelAxleReplacementModel,"pos" = vec(-0,-30.8,-24.528),"ang" = ang(0,0,90), 
+    P2M1:p2mPushModel(P2MID1,table("model" = WheelAxleReplacementModel,"pos" = vec(-0,-31.2,-24.528),"ang" = ang(0,0,90), 
     "scale" = vec(WheelAxleScale,WheelAxleScale,WheelAxleLength-0.1)
     ))
     
@@ -531,3 +540,4 @@ DamperTexture = "models/proppertextures/rubber"
 #------------------------------------------------------------------------------------------------------------------------------#       
 
 }
+
